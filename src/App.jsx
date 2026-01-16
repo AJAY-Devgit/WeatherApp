@@ -59,6 +59,9 @@ function App() {
   }
 
   async function SearchCity() {
+    if(input.trim().length===0){
+      return alert("Please enter the city")
+    }
     setLoading(true);
     let id = "8315404a32198e90ff76b3cd4089c074";
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${input.trim()}&appid=${id}&units=Metric`;
